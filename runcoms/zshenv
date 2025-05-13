@@ -9,3 +9,23 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+### Custom
+
+export LSCOLORS=GxBxhxDxfxhxhxhxhxcxcx
+
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH=$HOME/development/flutter/bin:$PATH
+
+### Workarounds for system issues
+
+export DISABLE_SPRING=true
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# https://github.com/microsoft/vscode/issues/140591
+export NODE_OPTIONS=--openssl-legacy-provider
+
+# https://stackoverflow.com/questions/75247041/ruby-3-0-4-with-postgres-14-throws-segmentation-fault
+export PGGSSENCMODE="disable"

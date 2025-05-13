@@ -72,7 +72,6 @@ if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export LSCOLORS=GxBxhxDxfxhxhxhxhxcxcx
 alias ls='ls -laghFG'
 alias gs='git status'
 alias gdh='git diff HEAD'
@@ -88,18 +87,8 @@ alias glint='eslint --fix $(git diff --name-only HEAD | xargs)'
 alias cotunnel='/Users/tamoyal/cotunnel/client/client'
 alias gpstash='git stash && git pull origin main && git stash pop'
 alias rails='bundle exec rails'
-alias ruby='bundle exec ruby'
+# alias ruby='bundle exec ruby'
 alias rake='bundle exec rake'
 alias rubocop='bundle exec rubocop'
 alias annotate='bundle exec annotate'
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
-
-export DISABLE_SPRING=true
-
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# https://github.com/microsoft/vscode/issues/140591
-export NODE_OPTIONS=--openssl-legacy-provider
-
-# https://stackoverflow.com/questions/75247041/ruby-3-0-4-with-postgres-14-throws-segmentation-fault
-export PGGSSENCMODE="disable"
